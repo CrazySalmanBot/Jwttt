@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .cyber-card { background: rgba(10,10,12,0.7); backdrop-filter: blur(24px); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5); position: relative; overflow: hidden; }
+    .cyber-card::before { content: ""; position: absolute; inset: 0; border-radius: 24px; padding: 1px; background: linear-gradient(180deg, rgba(255,255,255,0.15), transparent 60%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+    .title-font { font-family: 'Orbitron', 'Rajdhani', sans-serif; }
+    .cyber-input { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: monospace; transition: all 0.3s ease; }
+    .cyber-input:focus { border-color: #d946ef; background: rgba(0,0,0,0.6); box-shadow: 0 0 20px rgba(217,70,239,0.35); outline: none; }
+    .btn-grad { background-image: linear-gradient(to right, #8b5cf6 0%, #d946ef 51%, #8b5cf6 100%); background-size: 200% auto; transition: 0.5s; border: none; box-shadow: 0 0 20px rgba(217,70,239,0.3); }
+    .btn-grad:hover { background-position: right center; box-shadow: 0 0 30px rgba(217,70,239,0.5); transform: translateY(-1px); }
+    .social-icon-btn { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); transition: 0.2s; }
+    .social-icon-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+    select.cyber-input { appearance: none; -webkit-appearance: none; cursor: pointer; background-image: url("data:image/svg+xml;utf8,<svg fill='%23d946ef' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>"); background-repeat: no-repeat; background-position: right 14px center; font-family: 'Poppins', sans-serif; }
+    select.cyber-input option { background: #0a0a0c; color: #fff; }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- ═══ SEO: TITLE ═══ -->
+  <title>Free Fire Token Generator — EAT, JWT & Access Token | FFTools.Site</title>
+
+  <!-- ═══ SEO: CORE META ═══ -->
+  <meta name="description" content="Free Fire Token Generator — Convert EAT to JWT, EAT to Access Token, or Access Token to JWT
+instantly. 100% free, safe & fast. Works for all Free Fire regions.">
+  <meta name="keywords"    content="free fire token generator, free fire access token generator, free fire jwt token generator, free fire
+eat token, free fire eat to access token, free fire eat to jwt, ff token 2024, garena token generator">
+  <meta name="robots"      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author"      content="MazidSpace">
+  <meta name="theme-color" content="#d946ef">
+
+  <!-- ═══ SEO: CANONICAL ═══ -->
+  <link rel="canonical" href="https://www.fftools.site/free-fire-token-generator">
+
+  <!-- ═══ FAVICON ═══ -->
+  <link rel="icon"       type="image/png" href="/static/logo.png">
+  <link rel="apple-touch-icon"            href="/static/logo.png">
+  <link rel="shortcut icon" type="image/png" href="/static/logo.png">
+  <!-- ═══ SEO: OPEN GRAPH ═══ -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="FFTools.Site">
+  <meta property="og:title"       content="Free Fire Token Generator — EAT, JWT & Access Token | FFTools.Site">
+  <meta property="og:description" content="Convert Free Fire EAT → JWT, EAT → Access Token, or Access Token → JWT. Free, instant, and safe.">
+  <meta property="og:url"         content="http://www.fftools.site/free-fire-token-generator">
+  <meta property="og:image"       content="http://www.fftools.site/static/logo.png">
+  <meta property="og:locale"      content="en_US">
+
+  <!-- ═══ SEO: TWITTER CARD ═══ -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Free Fire Token Generator — FFTools.Site">
+  <meta name="twitter:description" content="Convert Free Fire EAT to JWT, Access Token instantly. Free & safe.">
+  <meta name="twitter:image"       content="http://www.fftools.site/static/logo.png">
+
+  <!-- ═══ SEO: JSON-LD SCHEMA ═══ -->
+  
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free Fire Token Generator",
+  "url": "http://www.fftools.site/free-fire-token-generator",
+  "description": "Convert Free Fire EAT token to JWT or Access Token instantly. Also converts Access Token to JWT. Free and safe tool for all Free Fire regions.",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["EAT to JWT conversion", "EAT to Access Token", "Access Token to JWT", "All Free Fire regions supported"]
+}
+</script>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@700;800&display=swap');
+    :root {
+      --bg:#030014; --bg2:#0a0a0c; --bg3:#0f0f13; --bg4:#141419;
+      --bd:rgba(255,255,255,0.08); --bd2:rgba(255,255,255,0.15);
+      --purple:#d946ef; --purple-l:#e879f9; --purple-d:#c026d3;
+      --purple-g:rgba(217,70,239,0.35); --purple-g2:rgba(217,70,239,0.1);
+      --green:#22c55e; --txt:#ffffff; --txt2:#e2e8f0; --txt3:#9ca3af;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+    html { scroll-behavior:smooth; }
+    body { background-color:var(--bg); color:var(--txt); font-family:'Poppins',sans-serif; overflow-x:hidden; -webkit-overflow-scrolling:touch; background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px); background-size:30px 30px; }
+    .page-content { animation:fadeIn .35s ease; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+    /* SEO content block styling */
+    .seo-hero { padding:20px 16px 0; max-width:480px; margin:0 auto; }
+    .seo-hero h1 { font-family:'Orbitron',sans-serif; font-size:1rem; font-weight:800; letter-spacing:1px; color:#fff; margin-bottom:8px; line-height:1.3; }
+    .seo-hero p  { font-size:.78rem; color:var(--txt3); line-height:1.6; margin-bottom:14px; }
+    .seo-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
+    .seo-tag  { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.5px; padding:4px 10px; border-radius:20px; background:var(--purple-g2); color:var(--purple-l); border:1px solid var(--purple-g); }
+    .seo-faq  { max-width:480px; margin:0 auto; padding:0 16px 8px; }
+    .seo-faq h2 { font-family:'Orbitron',sans-serif; font-size:.75rem; font-weight:800; color:var(--txt3); letter-spacing:1px; text-transform:uppercase; margin-bottom:10px; }
+    .faq-item { background:rgba(0,0,0,0.3); border:1px solid var(--bd); border-radius:10px; padding:12px 14px; margin-bottom:8px; }
+    .faq-item h3 { font-size:.78rem; font-weight:700; color:var(--purple-l); margin-bottom:4px; }
+    .faq-item p  { font-size:.72rem; color:var(--txt3); line-height:1.5; }
+
+    /* TOPBAR */
+    .topbar { background:rgba(10,10,12,0.8); backdrop-filter:blur(10px); border-bottom:1px solid var(--bd); padding:12px 16px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:500; }
+    .hbrand { display:flex; align-items:center; gap:10px; }
+    .hlogo { width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--purple-l),var(--purple-d)); display:flex; align-items:center; justify-content:center; box-shadow:0 0 18px var(--purple-g),0 0 6px rgba(217,70,239,0.5); padding:2.5px; flex-shrink:0; animation:logoGlow 3s ease-in-out infinite alternate; }
+    @keyframes logoGlow { from{box-shadow:0 0 12px var(--purple-g),0 0 4px rgba(217,70,239,0.4)} to{box-shadow:0 0 24px rgba(217,70,239,0.6),0 0 8px rgba(217,70,239,0.3)} }
+    .hlogo img { width:100%; height:100%; border-radius:50%; object-fit:cover; background:#000; display:block; }
+    .htitle { font-family:'Orbitron',sans-serif; font-size:1.05rem; font-weight:800; letter-spacing:1.5px; color:#ffffff; line-height:1.2; }
+    .hjoin { padding:7px 14px; border-radius:8px; border:none; cursor:pointer; background:linear-gradient(135deg,#3b82f6,#2563eb); color:#fff; font-family:'Poppins',sans-serif; font-size:.76rem; font-weight:700; display:flex; align-items:center; gap:5px; text-decoration:none; transition:all .3s; }
+    .hjoin:hover { box-shadow:0 0 15px rgba(59,130,246,0.5); }
+
+    /* CONTAINER & CARDS */
+    .con { max-width:480px; margin:0 auto; padding:16px 16px calc(75px + env(safe-area-inset-bottom)); }
+    .card { background:rgba(15,15,19,0.7); backdrop-filter:blur(12px); border:1px solid var(--bd); border-radius:20px; padding:20px; margin-bottom:16px; box-shadow:0 10px 30px -10px rgba(0,0,0,0.5); }
+    .slabel { display:flex; align-items:center; gap:8px; color:var(--txt3); font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px; }
+    .slabel i { color:var(--purple); }
+    .btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:14px; border:none; border-radius:12px; font-family:'Poppins',sans-serif; font-size:.9rem; font-weight:700; cursor:pointer; transition:all .3s; text-decoration:none; position:relative; overflow:hidden; }
+    .btn:active { transform:scale(.98); }
+    .btn-purple { background:linear-gradient(to right,#8b5cf6 0%,#d946ef 51%,#8b5cf6 100%); background-size:200% auto; color:#ffffff; box-shadow:0 0 20px var(--purple-g); }
+    .btn-purple:hover { background-position:right center; box-shadow:0 0 30px rgba(217,70,239,.5); transform:translateY(-2px); }
+    .btn-dark { background:rgba(0,0,0,0.4); color:var(--txt); border:1px solid var(--bd2); }
+    .btn-dark:hover { border-color:var(--purple); box-shadow:0 0 15px var(--purple-g2); }
+    .ibox { width:100%; padding:14px; background:rgba(0,0,0,0.4); border:1px solid var(--bd); border-radius:12px; color:var(--txt); font-family:monospace; font-size:.88rem; transition:all .3s; }
+    .ibox:focus { outline:none; border-color:var(--purple); background:rgba(0,0,0,0.6); box-shadow:0 0 20px var(--purple-g2); }
+    .igrp { margin-bottom:16px; }
+    select.ibox { appearance:none; -webkit-appearance:none; cursor:pointer; background-image:url("data:image/svg+xml;utf8,<svg fill='%23d946ef' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>"); background-repeat:no-repeat; background-position:right 14px center; font-family:'Poppins',sans-serif; }
+    select.ibox option { background:var(--bg3); color:#fff; }
+    .fbtn { padding:9px 3px; background:rgba(0,0,0,0.4); border:1px solid var(--bd); border-radius:9px; color:var(--txt2); font-weight:600; font-size:.66rem; cursor:pointer; transition:all .18s; display:flex; flex-direction:column; align-items:center; gap:3px; text-transform:uppercase; font-family:'Poppins',sans-serif; }
+    .fbtn:hover { background:var(--purple-g2); border-color:var(--purple); color:var(--purple); }
+    .ctoggle { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; background:rgba(0,0,0,0.4); border:1px solid var(--bd); border-radius:12px; cursor:pointer; transition:all .3s; }
+    .ctoggle:hover { border-color:var(--purple); box-shadow:0 0 10px var(--purple-g2); }
+    .ctoggle.open .arr { transform:rotate(180deg); }
+    .cgrid { display:none; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:10px; padding:16px; background:rgba(0,0,0,0.5); border:1px solid var(--bd); border-radius:12px; }
+    .cgrid.show { display:grid; animation:fadeIn .2s ease; }
+    .cbtn { height:32px; border-radius:8px; border:2px solid transparent; cursor:pointer; transition:all .2s; box-shadow:0 4px 10px rgba(0,0,0,0.5); }
+    .cbtn:hover { transform:scale(1.15) translateY(-2px); border-color:rgba(255,255,255,.8); }
+    .cpicker-row { grid-column:span 5; display:flex; gap:10px; align-items:center; margin-top:8px; padding-top:14px; border-top:1px solid var(--bd); }
+    .bprev { background:rgba(0,0,0,0.6); border:1px solid var(--purple-g); border-radius:12px; padding:16px; min-height:90px; max-height:170px; overflow-y:auto; font-family:'Poppins',sans-serif; font-size:.92rem; line-height:1.8; white-space:pre-wrap; word-wrap:break-word; box-shadow:inset 0 0 20px rgba(0,0,0,0.5); }
+    .bempty { color:var(--txt3); font-style:italic; font-size:.8rem; text-align:center; }
+    .bio-list { max-height:220px; overflow-y:auto; padding-right:5px; display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+    .bio-list::-webkit-scrollbar { width:5px; }
+    .bio-list::-webkit-scrollbar-thumb { background:var(--purple-g); border-radius:10px; }
+    .bio-preset-card { background:rgba(0,0,0,0.4); border:1px solid var(--bd); border-radius:10px; padding:12px; cursor:pointer; transition:all 0.2s; }
+    .bio-preset-card:hover { border-color:var(--purple); background:rgba(0,0,0,0.7); transform:translateY(-1px); }
+    .slider-container { position:relative; width:100%; border-radius:16px; overflow:hidden; border:1px solid var(--bd); aspect-ratio:16/9; }
+    .slider-track { display:flex; height:100%; width:100%; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .slide-item { min-width:100%; height:100%; position:relative; display:block; text-decoration:none; }
+    .slide-item img { width:100%; height:100%; object-fit:cover; filter:brightness(0.65); transition:filter 0.3s; }
+    .slider-container:hover .slide-item img { filter:brightness(0.8); }
+    .tut-play { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#ef4444; font-size:3.5rem; filter:drop-shadow(0 0 10px rgba(0,0,0,0.5)); transition:all .3s; }
+    .slide-item:hover .tut-play { transform:translate(-50%,-50%) scale(1.1); }
+    .slide-caption { position:absolute; bottom:0; width:100%; background:linear-gradient(transparent,rgba(0,0,0,0.95)); padding:30px 16px 12px; }
+    .slide-caption h4 { color:#fff; font-size:.85rem; font-weight:700; text-shadow:0 2px 4px rgba(0,0,0,0.8); font-family:'Orbitron',sans-serif; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+    .slider-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); backdrop-filter:blur(5px); color:#fff; border:1px solid rgba(255,255,255,0.1); width:36px; height:36px; border-radius:50%; display:flex; justify-content:center; align-items:center; cursor:pointer; transition:all 0.2s; z-index:10; }
+    .slider-arrow:hover { background:var(--purple); box-shadow:0 0 15px var(--purple-g); }
+    .arrow-left { left:10px; } .arrow-right { right:10px; }
+    .slider-dots { position:absolute; bottom:8px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:10; }
+    .dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.3); cursor:pointer; transition:all 0.3s; }
+    .dot.active { background:var(--purple); width:16px; border-radius:10px; box-shadow:0 0 8px var(--purple-g); }
+    .connect-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+    .connect-card { display:flex; align-items:center; gap:10px; padding:12px; border-radius:14px; background:rgba(26,26,26,0.6); border:1px solid rgba(255,255,255,0.05); text-decoration:none; transition:all 0.3s; }
+    .connect-card img { width:26px; height:26px; border-radius:50%; object-fit:cover; }
+    .connect-card span { font-size:0.75rem; font-weight:600; color:#9ca3af; transition:color 0.3s; }
+    .connect-card:hover span { color:#fff; }
+    .cc-tg:hover { background:rgba(41,182,246,0.1); border-color:rgba(41,182,246,0.3); transform:translateY(-2px); }
+    .cc-yt:hover { background:rgba(239,68,68,0.1); border-color:rgba(239,68,68,0.3); transform:translateY(-2px); }
+    .cc-ig:hover { background:rgba(236,72,153,0.1); border-color:rgba(236,72,153,0.3); transform:translateY(-2px); }
+    .cc-gh:hover { background:rgba(107,114,128,0.1); border-color:rgba(107,114,128,0.3); transform:translateY(-2px); }
+    .bnav { position:fixed; bottom:0; left:0; right:0; background:rgba(10,10,12,0.9); backdrop-filter:blur(10px); border-top:1px solid var(--bd); display:flex; z-index:1000; padding-bottom:env(safe-area-inset-bottom); }
+    .nitem { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:12px 5px; color:var(--txt3); font-size:1.1rem; transition:all .3s; gap:4px; cursor:pointer; background:none; border:none; font-family:'Poppins',sans-serif; text-decoration:none; }
+    .nitem span { font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; }
+    .nitem.active { color:var(--purple); }
+    .nitem.active .niw { background:var(--purple-g2); padding:6px 16px; border-radius:10px; box-shadow:inset 0 0 10px var(--purple-g); }
+    .modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.85); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; z-index:2000; opacity:0; visibility:hidden; transition:all .3s; padding:16px; }
+    .modal.show { opacity:1; visibility:visible; }
+    .mbox { background:var(--bg3); border-radius:24px; padding:24px; max-width:390px; width:100%; border:1px solid var(--bd); box-shadow:0 20px 60px rgba(0,0,0,.8); transform:translateY(20px); transition:transform .4s cubic-bezier(0.175,0.885,0.32,1.275); }
+    .modal.show .mbox { transform:translateY(0); }
+    #toast { position:fixed; top:-65px; left:50%; transform:translateX(-50%); background:var(--purple); color:#fff; border:1px solid var(--purple-d); padding:12px 24px; border-radius:30px; font-weight:700; font-size:.85rem; box-shadow:0 10px 30px rgba(217,70,239,.4); z-index:3000; transition:top .4s cubic-bezier(.68,-.55,.265,1.55); white-space:nowrap; }
+    .tbox { background:rgba(0,0,0,0.5); border:1px dashed var(--purple); border-radius:12px; padding:16px; margin:10px 0; font-family:monospace; font-size:.8rem; word-break:break-all; color:var(--purple-l); }
+    .site-footer { text-align:center; padding:10px 16px 6px; font-size:.62rem; color:var(--txt3); border-top:1px solid var(--bd); background:rgba(10,10,12,0.5); position:relative; z-index:5; }
+    .site-footer a { color:var(--purple-l); text-decoration:none; font-weight:700; }
+    .site-footer a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+  <div id="toast"></div>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="hbrand">
+      <div class="hlogo"><img src="/static/logo.png" alt="FFTools Logo"></div>
+      <div class="htitle">TOKEN GENERATOR</div>
+    </div>
+    <a href="https://t.me/MAZID_GMR" target="_blank" class="hjoin"><i class="fab fa-telegram-plane"></i> Contact Owner</a>
+  </div>
+
+  <!-- SEO HERO (shown only when block is defined) -->
+  
+<div class="seo-hero">
+    <h1>Free Fire Token Generator — EAT, JWT & Access Token</h1>
+    <p>The fastest Free Fire Token Generator online. Convert your <strong>EAT token to JWT</strong>, <strong>EAT to
+            Access
+            Token</strong>, or <strong>Access Token to JWT</strong> in seconds. Works for all Garena regions — ID, IND,
+        SG,
+        BR, TH and more.</p>
+    <div class="seo-tags">
+        <span class="seo-tag">Free Fire EAT Token</span>
+        <span class="seo-tag">FF JWT Token</span>
+        <span class="seo-tag">Access Token Generator</span>
+        <span class="seo-tag">EAT to JWT</span>
+        <span class="seo-tag">EAT to Access Token</span>
+        <span class="seo-tag">Free • Safe • Instant</span>
+    </div>
+</div>
+
+
+  <!-- PAGE CONTENT -->
+  <div class="page-content">
+    
+<div class="con">
+    <div class="cyber-card p-6 sm:p-8" style="text-align:left;">
+
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 mb-6">
+            <div class="flex items-center gap-2 mb-3 border-b border-white/5 pb-2">
+                <i class="fas fa-book-open text-fuchsia-400 text-xs"></i>
+                <span class="text-xs font-bold text-white uppercase tracking-wider">How to use</span>
+            </div>
+            <div class="space-y-4">
+                <div class="flex gap-3 text-[11px] text-gray-400">
+                    <span
+                        class="bg-fuchsia-500/20 text-fuchsia-400 font-bold px-2 py-0.5 rounded text-[10px] h-fit mt-0.5 flex-shrink-0">1</span>
+                    <div class="min-w-0 flex-1">
+                        <p>Select Provider &amp; Login below.</p>
+                        <p class="text-[10px] text-green-500 mt-0.5"><i class="fas fa-shield-alt"></i> Safe: Official
+                            Garena Server
+                        </p>
+                    </div>
+                </div>
+                <div class="flex gap-3 text-[11px] text-gray-400">
+                    <span
+                        class="bg-fuchsia-500/20 text-fuchsia-400 font-bold px-2 py-0.5 rounded text-[10px] h-fit mt-0.5 flex-shrink-0">2</span>
+                    <div class="min-w-0 flex-1">
+                        <p class="mb-1">After login, copy the URL containing <code class="text-fuchsia-400">eat=</code>
+                            parameter
+                        </p>
+                        <p class="mb-2 text-[10px] text-gray-500">Example URL:</p>
+                        <div class="bg-black/40 border border-white/10 rounded px-2 py-2 mb-3 overflow-x-auto">
+                            <code
+                                class="text-fuchsia-300 font-mono text-[10px] break-all leading-relaxed whitespace-pre-wrap">https://discstore.kiosgamer.co.id/?eat=850c3ca593e30d3ad0a56a18f854a12e833667d97c4927597ee0c19dfab27c4ef1cd2bada46592fa0bc4e82b091da3473633ae1a6716489049f0ab06b8e1593dc9e7d9512d17a161ed2864fec1087&lang=en&region=IND&account_id=2981670058&nickname=%E3%85%A4%E3%85%A4%E3%85%A4%0AP%0AA0024C</code>
+                        </div>
+                        <p class="mb-2">Search these terms in your browser history:</p>
+                        <div class="flex flex-col gap-2">
+                            <div
+                                class="flex items-center justify-between bg-black/40 border border-white/10 rounded px-2 py-1.5 min-w-0">
+                                <code
+                                    class="text-fuchsia-300 font-mono text-[10px] truncate flex-1 min-w-0 mr-2">https://discstore.kiosgamer.co.id/?eat=</code>
+                                <button onclick="copyToClip('https://discstore.kiosgamer.co.id/?eat=')"
+                                    class="text-gray-500 hover:text-white transition flex-shrink-0"><i
+                                        class="fas fa-copy"></i></button>
+                            </div>
+                            <div
+                                class="flex items-center justify-between bg-black/40 border border-white/10 rounded px-2 py-1.5 min-w-0">
+                                <code
+                                    class="text-fuchsia-300 font-mono text-[10px] truncate flex-1 min-w-0 mr-2">?eat=</code>
+                                <button onclick="copyToClip('?eat=')"
+                                    class="text-gray-500 hover:text-white transition flex-shrink-0"><i
+                                        class="fas fa-copy"></i></button>
+                            </div>
+                            <div
+                                class="flex items-center justify-between bg-black/40 border border-white/10 rounded px-2 py-1.5 min-w-0">
+                                <code
+                                    class="text-fuchsia-300 font-mono text-[10px] truncate flex-1 min-w-0 mr-2">/callback/?eat=</code>
+                                <button onclick="copyToClip('?access_token=')"
+                                    class="text-gray-500 hover:text-white transition flex-shrink-0"><i
+                                        class="fas fa-copy"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-3 text-[11px] text-gray-400">
+                    <span
+                        class="bg-fuchsia-500/20 text-fuchsia-400 font-bold px-2 py-0.5 rounded text-[10px] h-fit mt-0.5 flex-shrink-0">3</span>
+                    <p class="min-w-0 flex-1">Select Conversion Action &amp; Paste Token below.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 mb-6">
+            <div class="flex items-center gap-2 mb-3 border-b border-white/5 pb-2">
+                <i class="fab fa-youtube text-red-500 text-xs"></i>
+                <span class="text-xs font-bold text-white uppercase tracking-wider">Video Tutorial</span>
+            </div>
+            <a href="https://youtu.be/nroOtYY51sg?si=MW-clxX4bp2gRvKc" target="_blank"
+                class="block relative rounded-lg overflow-hidden group border border-white/10 hover:border-fuchsia-500/50 transition shadow-lg">
+                <img src="https://img.youtube.com/vi/nroOtYY51sg/hqdefault.jpg"
+                    class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition"
+                    alt="Click and Watch Tutorial">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div
+                        class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.6)] group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-play text-white ml-1"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 to-transparent pt-8 pb-2 px-3">
+                    <p class="text-white text-sm font-bold text-center tracking-wide">Click and Watch Tutorial</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="mb-6">
+            <div class="flex justify-between items-end mb-2">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Select Provider &amp;
+                    Login</span>
+            </div>
+            <div class="grid grid-cols-5 gap-2">
+                <a href="https://auth.garena.com/universal/oauth?platform=8&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/"
+                    target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+                    <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s96-fcrop64=1,00000000ffffffff-rw"
+                        class="w-5 h-5 object-contain">
+                </a>
+                <a href="https://auth.garena.com/universal/oauth?platform=3&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/"
+                    target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Facebook_Logo_2023.png/120px-Facebook_Logo_2023.png?20231011121526"
+                        class="w-5 h-5 object-contain">
+                </a>
+                <a href="https://auth.garena.com/universal/oauth?platform=10&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/"
+                    target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+                    <i class="fab fa-apple text-xl text-white"></i>
+                </a>
+                <a href="https://auth.garena.com/universal/oauth?platform=11&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/"
+                    target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+                    <img src="https://abs.twimg.com/responsive-web/client-web/icon-default.522d363a.png"
+                        class="w-5 h-5 object-contain rounded-full">
+                </a>
+                <a href="https://auth.garena.com/universal/oauth?platform=5&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/"
+                    target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+                    <img src="https://vk.com/images/icons/favicons/fav_logo.ico?8" class="w-5 h-5 object-contain">
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider"><i
+                    class="fas fa-exchange-alt text-fuchsia-400"></i> Conversion Action</span>
+            <select id="tokenAction" class="cyber-input w-full rounded-xl py-3 pl-4 pr-10 text-sm mt-2">
+                <option value="eat_to_jwt">EAT → JWT Token (Recommended)</option>
+                <option value="eat_to_access">EAT → Access Token</option>
+                <option value="access_to_jwt">Access Token → JWT Token</option>
+            </select>
+        </div>
+
+        <div class="mb-6">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider"><i
+                    class="fas fa-bolt text-fuchsia-400"></i> Paste Token</span>
+            <div class="relative group mt-2">
+                <input type="text" id="urlInput"
+                    class="cyber-input w-full rounded-xl py-3.5 pl-4 pr-10 text-sm placeholder-gray-600"
+                    placeholder="Paste Full URL or Token here..." autocomplete="off">
+                <button onclick="document.getElementById('urlInput').value=''"
+                    class="absolute right-3 top-3.5 text-gray-500 hover:text-fuchsia-400 transition"><i
+                        class="fas fa-times text-lg"></i></button>
+            </div>
+            <div class="flex justify-between mt-2 px-1">
+                <span class="text-[10px] text-gray-500">Both URL &amp; Token Accepted</span>
+                <button type="button" onclick="pasteToken()"
+                    class="text-[10px] text-fuchsia-400 hover:text-white transition flex items-center gap-1"><i
+                        class="far fa-clipboard"></i> Paste</button>
+            </div>
+        </div>
+
+        <button onclick="checkAndExtract()" id="extBtn"
+            class="btn-grad w-full rounded-xl py-4 font-bold title-font text-white text-base tracking-widest flex items-center justify-center gap-2">
+            GENERATE TOKEN <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+    </div>
+</div>
+
+  </div>
+
+  <!-- SEO FAQ (shown only when block is defined) -->
+  
+<div class="seo-faq">
+    <h2><i class="fas fa-question-circle" style="color:var(--purple);margin-right:6px;"></i> Frequently Asked Questions
+    </h2>
+    <div class="faq-item">
+        <h3>What is a Free Fire EAT Token?</h3>
+        <p>EAT (External Auth Token) is an authentication token used by Free Fire/Garena to verify your account. It's
+            used
+            to perform account actions like changing your bio.</p>
+    </div>
+    <div class="faq-item">
+        <h3>What is a Free Fire JWT Token?</h3>
+        <p>JWT (JSON Web Token) is a more secure token format derived from your EAT or Access Token. It's required by
+            the
+            Free Fire to authenticate requests.</p>
+    </div>
+    <div class="faq-item">
+        <h3>Is this Free Fire Token Generator safe?</h3>
+        <p>Yes, 100% safe. We use the official Garena OAuth login — your password is never shared with us. We only
+            convert
+            the token you already have.</p>
+    </div>
+    <div class="faq-item">
+        <h3>How to get my Free Fire EAT token?</h3>
+        <p>Log in using the provider buttons above, then check your browser history for URLs containing ‘eat=’, and
+            usually
+            select the second URL from the top.<code style="color:var(--purple-l)">?eat=</code> or <code
+                style="color:var(--purple-l)">/callback/?eat=</code>.</p>
+    </div>
+</div>
+
+
+  <!-- BOTTOM NAV -->
+  <nav class="bnav">
+    <a href="/" class="nitem ">
+      <div class="niw"><i class="fas fa-home"></i></div><span>HOME</span>
+    </a>
+    <a href="/free-fire-token-generator" class="nitem active">
+      <div class="niw"><i class="fas fa-key"></i></div><span>TOKEN</span>
+    </a>
+    <a href="/free-fire-long-bio" class="nitem ">
+      <div class="niw"><i class="fas fa-fingerprint"></i></div><span>BIO</span>
+    </a>
+    <a href="/free-fire-unique-bio" class="nitem ">
+      <div class="niw"><i class="fas fa-star"></i></div><span>UNIQUE</span>
+    </a>
+  </nav>
+
+  <!-- SHARED MODALS -->
+  <div class="modal" id="tokenModal">
+    <div class="mbox">
+      <div style="text-align:center;margin-bottom:12px;">
+        <h3 class="htitle" style="font-size:1.2rem;"><i class="fas fa-check-circle" style="color:var(--green);margin-right:6px;"></i>TOKEN READY</h3>
+      </div>
+      <div style="margin:12px 0;background:rgba(0,0,0,0.4);padding:14px;border-radius:12px;border:1px solid var(--bd);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="color:var(--txt3);font-size:.75rem;">Name</span><span id="tName" style="color:var(--green);font-weight:700;font-size:.8rem;">...</span></div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;"><span style="color:var(--txt3);font-size:.75rem;">UID</span><span id="tUid" style="color:var(--green);font-weight:700;font-family:monospace;font-size:.8rem;">...</span></div>
+        <div style="display:flex;justify-content:space-between;"><span style="color:var(--txt3);font-size:.75rem;">Region</span><span id="tRegion" style="color:var(--purple-l);font-weight:700;font-size:.8rem;">...</span></div>
+      </div>
+      <div class="slabel" style="margin-bottom:4px;"><i class="fas fa-key"></i> <span id="tTypeLabel">TOKEN</span></div>
+      <div id="tAcc" class="tbox" style="margin-top:0;padding:12px;max-height:80px;overflow-y:auto;font-size:.75rem;"></div>
+      <div style="margin-top:14px;display:grid;gap:8px;">
+        <button onclick="copyToClip(document.getElementById('tAcc').textContent)" class="btn btn-purple" style="padding:10px;"><i class="fas fa-copy"></i> COPY TOKEN</button>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <a href="/free-fire-long-bio" onclick="storeTokenForBio()" class="btn btn-dark" style="border-color:var(--purple);color:var(--purple);padding:10px;"><i class="fas fa-fingerprint"></i> USE</a>
+          <button onclick="closeModal('tokenModal')" class="btn btn-dark" style="padding:10px;"><i class="fas fa-times"></i> CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="bioSuccessModal">
+    <div class="mbox">
+      <div style="text-align:center;margin-bottom:16px;">
+        <h3 class="htitle" style="font-size:1.3rem;">SUCCESS!</h3>
+        <p style="color:var(--txt3);font-size:.85rem;margin-top:5px;">Bio updated in Free Fire</p>
+      </div>
+      <div style="margin:16px 0;background:rgba(0,0,0,0.4);padding:16px;border-radius:12px;border:1px solid var(--bd);">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px;"><span style="color:var(--txt3);font-size:.8rem;">Name</span><span id="bsName" style="color:var(--green);font-weight:700;">...</span></div>
+        <div style="display:flex;justify-content:space-between;"><span style="color:var(--txt3);font-size:.8rem;">UID</span><span id="bsUid" style="color:var(--green);font-weight:700;font-family:monospace;">...</span></div>
+      </div>
+      <div class="slabel"><i class="fas fa-edit"></i> NEW BIO PREVIEW</div>
+      <div id="bsBio" class="bprev" style="min-height:auto;text-align:center;"></div>
+      <button onclick="closeModal('bioSuccessModal')" class="btn btn-purple" style="margin-top:20px;"><i class="fas fa-check"></i> AWESOME</button>
+    </div>
+  </div>
+
+  <!-- SHARED JS -->
+  <script>
+    function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.top='62px';setTimeout(()=>{t.style.top='-65px';},3000);}
+    function openModal(id){document.getElementById(id).classList.add('show');}
+    function closeModal(id){document.getElementById(id).classList.remove('show');}
+    function copyToClip(t){navigator.clipboard.writeText(t).then(()=>toast('Copied!')).catch(()=>alert('Copied: '+t));}
+    function insertAtCursor(elemId,text){const ta=document.getElementById(elemId);if(!ta)return;const s=ta.selectionStart,e=ta.selectionEnd;ta.value=ta.value.substring(0,s)+text+ta.value.substring(e);ta.selectionStart=ta.selectionEnd=s+text.length;ta.focus();if(elemId==='bioText')updatePreview('bioText','bioPreview','charCount');if(elemId==='uBioText')updatePreview('uBioText','uBioPreview',null);}
+    function addCustomColor(elemId,colorId){insertAtCursor(elemId,'['+document.getElementById(colorId).value.replace('#','')+']');}
+    function toggleColors(gridId,toggleId){const g=document.getElementById(gridId),t=document.getElementById(toggleId);if(g&&t){g.classList.toggle('show');t.classList.toggle('open');}}
+    function renderBioHtml(val){if(!val.trim())return'<div class="bempty">Type above to preview...</div>';let html='',color='#ffffff',bold=false,italic=false,uline=false,cur='',i=0;while(i<val.length){if(val[i]==='['&&i+7<=val.length&&val[i+7]===']'){const hx=val.substring(i+1,i+7);if(/^[0-9A-Fa-f]{6}$/.test(hx)){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';color='#'+hx.toLowerCase();i+=8;continue;}}const s3=val.substring(i,i+3).toLowerCase(),s4=val.substring(i,i+4).toLowerCase();if(s3==='[b]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';bold=true;i+=3;continue;}if(s4==='[/b]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';bold=false;i+=4;continue;}if(s3==='[i]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';italic=true;i+=3;continue;}if(s4==='[/i]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';italic=false;i+=4;continue;}if(s3==='[u]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';uline=true;i+=3;continue;}if(s4==='[/u]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';uline=false;i+=4;continue;}if(s3==='[c]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';i+=3;continue;}if(s4==='[/c]'){if(cur)html+=buildSpan(cur,color,bold,italic,uline);cur='';i+=4;continue;}cur+=val[i];i++;}if(cur)html+=buildSpan(cur,color,bold,italic,uline);return html;}
+    function buildSpan(t,c,b,i,u){let st=`color:${c};`;if(b)st+='font-weight:bold;';if(i)st+='font-style:italic;';if(u)st+='text-decoration:underline;';return`<span style="${st}">${t}</span>`;}
+    function updatePreview(inputId,previewId,countId){const ta=document.getElementById(inputId);if(ta){if(countId)document.getElementById(countId).textContent=ta.value.length+'/250';document.getElementById(previewId).innerHTML=renderBioHtml(ta.value);}}
+    function storeTokenForBio(){const t=document.getElementById('tAcc');if(t)sessionStorage.setItem('pendingToken',t.textContent);}
+    window.addEventListener('DOMContentLoaded',()=>{const p=sessionStorage.getItem('pendingToken');if(p){const at=document.getElementById('accessToken'),ut=document.getElementById('uToken');if(at)at.value=p;if(ut)ut.value=p;sessionStorage.removeItem('pendingToken');toast('Token loaded & ready!');}});
+  </script>
+
+  <!-- FOOTER -->
+  <div class="site-footer">
+    By using this site you agree to our <a href="/terms">Terms &amp; Conditions</a> &nbsp;|&nbsp; &copy; 2025 FFTools.Site &nbsp;|&nbsp; <a href="https://t.me/MAZID_GMR" target="_blank">@MAZID_GMR</a>
+  </div>
+
+  
+<script>
+    async function pasteToken() { try { const t = await navigator.clipboard.readText(); document.getElementById('urlInput').value = t; toast('Pasted!'); } catch { alert('Paste permission denied! Use Ctrl+V.'); } }
+    async function checkAndExtract() {
+        const input = document.getElementById('urlInput').value.trim();
+        const action = document.getElementById('tokenAction').value;
+        if (!input) { toast('Paste URL or Token!'); return; }
+        const btn = document.getElementById('extBtn'), orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> GENERATING...'; btn.disabled = true;
+        try {
+            const r = await fetch('/api/verify-token', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: input, action }) });
+            const d = await r.json();
+            if (d.success) { document.getElementById('tName').textContent = d.nickname || '--'; document.getElementById('tUid').textContent = d.account_id || '--'; document.getElementById('tRegion').textContent = d.region || '--'; document.getElementById('tTypeLabel').textContent = d.token_type; document.getElementById('tAcc').textContent = d.result_token; openModal('tokenModal'); }
+            else throw new Error(d.error);
+        } catch (err) { toast(err.message || 'Connection Error!'); }
+        finally { btn.innerHTML = orig; btn.disabled = false; }
+    }
+</script>
+
+
+</body>
+</html>
